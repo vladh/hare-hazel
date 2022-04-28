@@ -24,9 +24,3 @@ For more details on 3D graphics in Hare, check out
 
 Please note that `make run` will delete some cache directories in
 `~/.cache/hare/` due to [bug 569](https://todo.sr.ht/~sircmpwn/hare/569).
-
-## License
-
-This project is licensed under a restrictive license. You are free to use the
-source code only for personal, educational, non-commercial purposes. The full
-license is included.
