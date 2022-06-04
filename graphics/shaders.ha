@@ -51,7 +51,7 @@ void main()
 fn make_shader(source: str, kind: uint) (uint | errors::invalid) = {
 	const shader = gl::glCreateShader(kind);
 	const cstr = util::cstr(source);
-	gl::glShaderSource(shader, 1, &cstr, null: *const i32);
+	gl::glShaderSource(shader, 1, &cstr, null);
 	gl::glCompileShader(shader);
 
 	let success: i32 = 1;

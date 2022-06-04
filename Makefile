@@ -3,7 +3,7 @@
 
 LIBS=-lc -lSDL2 -lEGL
 VARS=LD_LIBRARY_PATH=/usr/lib:${LD_LIBRARY_PATH} \
-	HAREPATH=vendor/hare-sdl2:vendor/hare-glm:vendor/gl:${HAREPATH}
+	HAREPATH=vendor/hare-sdl2:vendor/hare-glm:vendor/gl-v4.6-core:${HAREPATH}
 
 peony:
 	$(VARS) hare build $(LIBS) cmd/peony
