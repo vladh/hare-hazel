@@ -36,7 +36,7 @@ fn run() (void | fs::error | sdl2::error) = {
 	sdl2::SDL_GL_SetAttribute(sdl2::SDL_GLattr::GL_CONTEXT_MINOR_VERSION, 3);
 	defer sdl2::SDL_Quit();
 
-	const win = sdl2::SDL_CreateWindow("peony",
+	const win = sdl2::SDL_CreateWindow("hazel",
 		sdl2::SDL_WINDOWPOS_UNDEFINED, sdl2::SDL_WINDOWPOS_UNDEFINED,
 		common::WINDOW_WIDTH, common::WINDOW_HEIGHT,
 		sdl2::SDL_WindowFlags::OPENGL)?;

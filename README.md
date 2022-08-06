@@ -1,13 +1,11 @@
-# hare-peony
+# hare-hazel
 
-This is a 3D game engine written from scratch in Hare. It's based on the
-[peony game engine](https://git.sr.ht/~vladh/peony). I haven't yet decided
-the scope of this implementation. It might be a full rewrite of the C++ version,
-it might only feature basic components.
+This is a very simple 3D game engine written from scratch in Hare. It's loosely
+based on the [peony game engine](https://git.sr.ht/~vladh/peony), but implements
+a much more minimalistic render pipeline.
 
-For more details on the capabilities of the C++ engine, check out the
-original [peony game engine](https://git.sr.ht/~vladh/peony). Here's a picture
-of a scene from the full C++ engine.
+Here's a picture of a scene from the full C++ engine. After I've done some more
+work on hare-hazel I'll add a screenshot that's more representative.
 
 ![peony screenshot](https://vladh.net/static/peony@1000px.jpg)
 
@@ -16,7 +14,7 @@ For more details on 3D graphics in Hare, check out
 
 ## Usage
 
-* Make sure to clone with submodules (`git clone --recurse-submodules git@git.sr.ht:~vladh/hare-peony`)
+* Make sure to clone with submodules (`git clone --recurse-submodules git@git.sr.ht:~vladh/hare-hazel`)
 * Install `libsdl2`
 * Run `make run` to run the demo
 
