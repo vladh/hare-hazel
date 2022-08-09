@@ -1,9 +1,18 @@
 // © 2022 Vlad-Stefan Harbuz <vlad@vladh.net>
 // SPDX-License-Identifier: MIT
 
-use sdl2;
-
 use glm::{ v3 };
+
+use math::random;
+
+export type common_state = struct {
+	should_quit: bool,
+	rng: random::random,
+	t: f32,
+	dt: f32,
+};
+
+export let state: common_state = common_state { ... };
 
 export def WINDOW_WIDTH: int = 1280;
 export def WINDOW_HEIGHT: int = 1024;

@@ -8,7 +8,6 @@ use glm;
 use glm::{ v3, v4, m4 };
 
 use common;
-use common::{ state, drawable };
 
 fn init_buffers(drawable: *drawable) void = {
 	for (let i = 0z; i < len(common::BUNNY_INDICES); i += 1) {
@@ -53,7 +52,6 @@ export fn init_drawable(drawable: *drawable, prog: uint) void = {
 
 export fn draw_drawable(
 	drawable: *drawable,
-	state: *state, // TODO: Remove once UBO is added
 	model: *m4,
 	color: *v3
 ) void = {
@@ -62,9 +60,9 @@ export fn draw_drawable(
 	gl::glUseProgram(drawable.shader_program);
 
 	// TODO: Move to UBO
-	uniformmat4fv(drawable.shader_program, "view\0", &state.graphics.view);
-	uniformmat4fv(drawable.shader_program, "projection\0", &state.graphics.projection);
-	uniform1f(drawable.shader_program, "t\0", state.t);
+	uniformmat4fv(drawable.shader_program, "view\0", &state.view);
+	uniformmat4fv(drawable.shader_program, "projection\0", &state.projection);
+	uniform1f(drawable.shader_program, "t\0", common::state.t);
 
 	uniformmat4fv(drawable.shader_program, "model\0", model);
 	uniform3fv(drawable.shader_program, "uniform_color\0", color);
