@@ -1,3 +1,6 @@
+// © 2022 Vlad-Stefan Harbuz <vlad@vladh.net>
+// SPDX-License-Identifier: MIT
+
 use math::random;
 
 use glm::{ v3, v4, m4 };

@@ -1,3 +1,6 @@
+// © 2022 Vlad-Stefan Harbuz <vlad@vladh.net>
+// SPDX-License-Identifier: MIT
+
 use fmt;
 use math;
 use math::random;

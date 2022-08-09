@@ -1,3 +1,6 @@
+# © 2022 Vlad-Stefan Harbuz <vlad@vladh.net>
+# SPDX-License-Identifier: MIT
+
 [submodule "vendor/hare-glm"]
 	path = vendor/hare-glm
 	url = git@git.sr.ht:~vladh/hare-glm

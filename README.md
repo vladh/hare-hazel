@@ -1,3 +1,8 @@
+<!--
+© 2022 Vlad-Stefan Harbuz <vlad@vladh.net>
+SPDX-License-Identifier: MIT
+-->
+
 # hare-hazel
 
 This is a very simple 3D game engine written from scratch in Hare. It's loosely
