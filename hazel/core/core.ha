@@ -10,9 +10,9 @@ use strings;
 use glm::{ v3, m2 };
 use sdl2;
 
-use graphics;
-use engine;
-use common;
+use hazel::graphics;
+use hazel::engine;
+use hazel::common;
 
 export fn run() (void | fs::error | sdl2::error) = {
 	common::state.dt = 1000.0 / 60.0;

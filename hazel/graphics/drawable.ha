@@ -7,7 +7,7 @@ use gl;
 use glm;
 use glm::{ v3, v4, m4 };
 
-use common;
+use hazel::common;
 
 fn init_buffers(drawable: *drawable) void = {
 	for (let i = 0z; i < len(common::BUNNY_INDICES); i += 1) {

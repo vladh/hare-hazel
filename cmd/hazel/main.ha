@@ -6,10 +6,10 @@ use fs;
 
 use sdl2;
 
-use core;
+use hazel::core;
 
 export fn main() void = {
-	match (core::run()) {
+	match (hazel::core::run()) {
 	case let err: sdl2::error =>
 		fmt::fatal("SDL2 error: {}", sdl2::strerror(err));
 	case let err: fs::error =>

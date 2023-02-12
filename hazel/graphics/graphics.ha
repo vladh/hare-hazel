@@ -3,15 +3,15 @@
 
 use fmt;
 use math;
-use util;
 
 use gl;
 use glm;
 use glm::{ v3, v4, m4 };
 use sdl2;
 
-use common;
-use engine;
+use hazel::common;
+use hazel::engine;
+use hazel::util;
 
 export type drawable = struct {
 	vbo: uint,

@@ -9,7 +9,7 @@ use glm;
 use glm::{ v3, v4, m4 };
 use sdl2;
 
-use common;
+use hazel::common;
 
 def STAR_SPEED: f32 = 0.6;
 def STAR_Z_MAX: f32 = 10.0;

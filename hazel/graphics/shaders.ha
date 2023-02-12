@@ -8,7 +8,8 @@ use strings;
 use gl;
 use glm;
 use glm::{ v3, v4, m4 };
-use util;
+
+use hazel::util;
 
 def VERT_SHADER: str = "
 #version 330 core

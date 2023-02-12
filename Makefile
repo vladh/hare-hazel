@@ -7,15 +7,13 @@
 LIBS=-lc -lSDL2 -lEGL
 VARS=LD_LIBRARY_PATH=/usr/lib:${LD_LIBRARY_PATH}
 
-hazel:
-	$(VARS) hare build $(LIBS) cmd/hazel
-
-run:
+bin/hazel:
 	@ # Bug https://todo.sr.ht/~sircmpwn/hare/569
-	rm -rf \
-		${HOME}/.cache/hare/common \
-		${HOME}/.cache/hare/graphics \
-		${HOME}/.cache/hare/engine
-	$(VARS) hare run $(LIBS) cmd/hazel
+	@ # rm -rf ${HOME}/.cache/hare/hazel
+	mkdir -p bin
+	$(VARS) hare build $(LIBS) -o bin/hazel cmd/hazel
 
-.PHONY: hazel run
+run: hazel
+	./bin/hazel
+
+.PHONY: run
