@@ -63,7 +63,7 @@ fn make_shader(source: str, kind: uint) (uint | errors::invalid) = {
 	if (success == 0) {
 		gl::glGetShaderInfoLog(shader, 512, null: *const i32,
 			&log[0]: *i8);
-		const log_str = strings::fromutf8(log);
+		const log_str = strings::fromutf8(log) as str;
 		fmt::printfln("Shader compilation failed: {}", log_str)!;
 		return errors::invalid;
 	};
@@ -83,7 +83,7 @@ fn make_shader_program(vert: uint, frag: uint) (uint | errors::invalid) = {
 	if (success == 0) {
 		gl::glGetShaderInfoLog(program, 512, null: *const i32,
 			&log[0]: *i8);
-		const log_str = strings::fromutf8(log);
+		const log_str = strings::fromutf8(log) as str;
 		fmt::printfln("Shader program linking failed: {}", log_str)!;
 		return errors::invalid;
 	};
