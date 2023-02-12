@@ -7,7 +7,7 @@
 LIBS=-lc -lSDL2 -lEGL
 VARS=LD_LIBRARY_PATH=/usr/lib:${LD_LIBRARY_PATH}
 
-bin/hazel:
+hazel:
 	@ # Bug https://todo.sr.ht/~sircmpwn/hare/569
 	@ # rm -rf ${HOME}/.cache/hare/hazel
 	mkdir -p bin
@@ -16,4 +16,4 @@ bin/hazel:
 run: hazel
 	./bin/hazel
 
-.PHONY: run
+.PHONY: hazel run
