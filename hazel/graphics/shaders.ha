@@ -11,51 +11,13 @@ use glm::{ v3, v4, m4 };
 
 use hazel::util;
 
-def VERT_SHADER: str = "
-#version 330 core
-layout (location = 0) in vec3 pos;
-layout (location = 1) in vec3 normal;
-layout (location = 2) in vec3 color;
-
-out vec3 vs_normal;
-out vec3 vs_color;
-
-uniform mat4 model;
-uniform mat4 view;
-uniform mat4 projection;
-
-void main()
-{
-	gl_Position = projection * view * model * vec4(pos.x, pos.y, pos.z, 1.0);
-	vs_normal = normal;
-	vs_color = color;
-}
-\0";
-
-def FRAG_SHADER: str = "
-#version 330 core
-out vec4 out_color;
-
-in vec3 vs_normal;
-in vec3 vs_color;
-
-uniform float t;
-uniform vec3 uniform_color;
-
-void main()
-{
-	out_color = vec4((vs_normal + 1.0) / 2.0, 1.0);
-	// out_color = vec4(
-	// 	(uniform_color * 0.3) + vs_color * (((sin(t) + 1.0) / 2) + 0.3),
-	// 	1.0f
-	// );
-}
-\0";
-
-fn make_shader(source: str, kind: uint) (uint | errors::invalid) = {
+fn make_shader(
+	source: nullable *const u8,
+	kind: uint,
+) (uint | errors::invalid) = {
 	const shader = gl::glCreateShader(kind);
-	const cstr = util::cstr(source);
-	gl::glShaderSource(shader, 1, &cstr, null);
+	gl::glShaderSource(shader, 1,
+		&source: nullable *const nullable *const i8, null);
 	gl::glCompileShader(shader);
 
 	let success: i32 = 1;

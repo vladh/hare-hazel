@@ -2,7 +2,10 @@
 // SPDX-License-Identifier: MIT
 
 use fmt;
+use io;
 use math;
+use os;
+use strings;
 
 use gl;
 use glm;
@@ -60,8 +63,20 @@ export fn init_window() void = {
 };
 
 fn init_shaders() void = {
-	const vert = make_shader(VERT_SHADER, gl::GL_VERTEX_SHADER)!;
-	const frag = make_shader(FRAG_SHADER, gl::GL_FRAGMENT_SHADER)!;
+	let source: [10000]u8 = [0...];
+
+	const vert_f = os::open("shaders/bunny.vert")!;
+	defer io::close(vert_f)!;
+	io::read(vert_f, source)!;
+	const vert = make_shader(&source[0], gl::GL_VERTEX_SHADER)!;
+
+	source = [0...];
+
+	const frag_f = os::open("shaders/bunny.frag")!;
+	defer io::close(frag_f)!;
+	io::read(frag_f, source)!;
+	const frag = make_shader(&source[0], gl::GL_FRAGMENT_SHADER)!;
+
 	const prog = make_shader_program(vert, frag)!;
 	gl::glDeleteShader(vert);
 	gl::glDeleteShader(frag);
