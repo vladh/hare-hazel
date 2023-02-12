@@ -1,4 +1,4 @@
-// © 2022 Vlad-Stefan Harbuz <vlad@vladh.net>
+// (c) 2022 Vlad-Stefan Harbuz <vlad@vladh.net>
 // SPDX-License-Identifier: MIT
 
 use types;
