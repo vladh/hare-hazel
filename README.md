@@ -27,3 +27,15 @@ For more details on 3D graphics in Hare, check out
 
 Please note that `make run` will delete some cache directories in
 `~/.cache/hare/` due to [bug 569](https://todo.sr.ht/~sircmpwn/hare/569).
+
+## Contributing
+
+Send patches to `~vladh/general@lists.sr.ht` using subject prefix `[PATCH hare-hazel]`. For example:
+
+```
+git config sendemail.to '~vladh/general@lists.sr.ht'
+git config format.subjectPrefix 'PATCH hare-hazel'
+git send-email HEAD^
+```
+
+For more information, see [git-send-email.io](https://git-send-email.io/).
